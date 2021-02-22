@@ -1,0 +1,11 @@
+const express= require('express');
+const {preMenuTime,preMenu, preList, liveList, liveDetail} = require('./betsService');
+const {login} =require ('./authService');
+const router= express.Router();
+ router.get("/bets/pre/menu/:hours",preMenuTime);
+router.get("/bets/pre/menu",preMenu);
+router.get("/bets/pre/list",preList);
+router.get("/bets/live/list",liveList);
+router.get("/bets/live/detail/:id",liveDetail);
+router.post('/accounts/login',login);
+module.exports=router;
